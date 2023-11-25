@@ -1,20 +1,18 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send
 
-app = Flask(_name_)
-socketio = SocketIO(app, cors_allowed_origins=“*”)
+app = Flask(__name__)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 
-@socketio.on(“message”)
-def sendMessage(message):
-	send(message, broadcast=True)
-	# send() function will emit a message event by default
+@socketio.on("message")
+def sendMessage(data):
+    send(data, broadcast=True)
 
-
-@app.route(“/”)
+@app.route("/")
 def message():
-  return render_template(“message.html”)
+    return render_template("message.html")
 
 
-if _name_ == “_main_”:
-  app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
