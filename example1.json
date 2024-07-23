@@ -11,7 +11,7 @@
       "nameOfPersonWhoPosted": "Jane Doe",
       "message": "Sounds cool. Can't wait to see it!",
       "likesCount": "2",
-      "comments": [],
+      "comments": ["First Comment", "Second Comment"],
       "timeOfPost": "1234567890"
     }
   ]
